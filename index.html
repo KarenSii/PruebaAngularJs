@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Prueba AngularJS</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body ng-controller="mainController">
+    <input type="button" value="Mostrar" ng-click="show.btn=!show.btn">
+    <ul ng-show="show.btn" ng-repeat="post in post">
+      <li id="nom">{{post.nombre}}</li>
+      <li id="com">{{post.comentario}}</li>
+      <li><input type="button" value="Eliminar" ng-click="borrar($index)" ng-show="show.btn"></li>
+    </ul>
+    <input type="text" ng-model="nombre" placeholder="Nombre" ng-show="show.btn">
+    <input type="text" ng-model="comentario" placeholder="Comentario" ng-show="show.btn">
+    <input type="button" value="Guardar" ng-click="guardar()" ng-show="show.btn">
+
+   <script src="js/angular-1.5.0-rc.1/angular.js"></script>
+   <script src="js/angular-1.5.0-rc.1/angular-route.js"></script>
+   <script src="script.js"></script>
+  </body>
+</html>
